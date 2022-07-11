@@ -1,0 +1,47 @@
+import { Badge, Stack } from "@mui/material";
+import { Link } from "react-router-dom";
+
+import SearchIcon from "@mui/icons-material/Search";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import PersonIcon from "@mui/icons-material/Person";
+
+import classes from "./Header.module.css";
+import { navbarLinks, iconsStyle } from "./headerData";
+import { Fragment } from "react";
+
+const DrawerContent = () => {
+  return (
+    <>
+      <Stack
+        direction="column"
+        rowGap={2}
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Link to="/" className={classes["navbar-heading"]}>
+          E-Markup
+        </Link>
+        {navbarLinks.map(({ id, name, link, icon }) => (
+          <Fragment key={id}>
+            <Link className={classes["navbar-links"]} to={link}>
+              <Stack direction="row" columnGap={1} alignItems="center">
+                {icon}
+                {name}
+              </Stack>
+            </Link>
+          </Fragment>
+        ))}
+
+        <SearchIcon sx={iconsStyle} />
+        <FavoriteBorderIcon sx={iconsStyle} />
+        <Badge badgeContent={1} color="error">
+          <ShoppingCartIcon sx={iconsStyle} />
+        </Badge>
+        <PersonIcon sx={iconsStyle} />
+      </Stack>
+    </>
+  );
+};
+
+export default DrawerContent;

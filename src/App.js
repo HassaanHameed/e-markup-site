@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-function App() {
+import Home from "./components/home/Home";
+import Header from "./components/general/header/Header";
+import Footer from "./components/general/footer/Footer";
+import LogIn from "./components/myAccount/LogIn";
+import Registration from "./components/myAccount/Registration";
+import ForgotPassword from "./components/myAccount/ForgotPassword";
+import ErrorPage from "./components/general/error/Error404";
+import Categories from "./components/categories/Categories";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="*" element={<ErrorPage />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<LogIn />} />
+        <Route path="/registration" element={<Registration />} />
+        <Route path="/forgotpassword" element={<ForgotPassword />} />
+        <Route path="/categories" element={<Categories />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   );
-}
+};
 
 export default App;

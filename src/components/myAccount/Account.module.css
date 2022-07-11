@@ -1,0 +1,44 @@
+.input-field {
+  outline: none;
+  border: 1px solid black;
+  padding: 5px 10px;
+  border-radius: 5px;
+  width: 250px;
+  background-color: transparent;
+
+  width: 400px;
+  font-size: 17px;
+}
+.action-button {
+  width: 200px;
+  padding: 5px;
+  color: white;
+  background-color: green;
+  border: none;
+  border-radius: 5px;
+}
+.action-button:hover {
+  cursor: pointer;
+}
+.action-button-forgot {
+  padding: 5px;
+  color: red;
+  text-decoration: underline;
+  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+}
+.action-button-forgot:hover {
+  cursor: pointer;
+}
+.general-headings {
+  color: black;
+}
+.quetion-selection {
+  width: 422px;
+  padding: 5px 10px;
+  font-size: 17px;
+  border: 1px solid black;
+  outline: none;
+  border-radius: 5px;
+}

@@ -1,0 +1,44 @@
+.footer-links {
+  text-decoration: none;
+  color: white;
+}
+.footer-links:hover {
+  color: brown;
+}
+.footer-heading {
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+.newsletter-div {
+  width: 90%;
+  background-color: #393939;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.newsletter-heading {
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+}
+.newsletter-paragraph {
+  color: white;
+}
+.newsletter-div input {
+  border: none;
+  outline: none;
+  background-color: #393939;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+.footer-copyright {
+  color: white;
+  text-align: center;
+}
+.footer-straightline {
+  width: 100%;
+  background-color: silver;
+  height: 1px;
+}

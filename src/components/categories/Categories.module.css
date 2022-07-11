@@ -1,0 +1,63 @@
+.category-main-heading {
+  font-size: 80px;
+  color: silver;
+}
+.category-sortby-heading {
+  font-size: 15px;
+}
+.category-layout-style:hover {
+  cursor: pointer;
+}
+
+.category-images:hover {
+  cursor: pointer;
+}
+.category-name-heading {
+  font-size: 30px;
+  font-weight: bold;
+}
+.category-addtocart-btn {
+  border: 2px solid black;
+  background-color: transparent;
+  padding: 8px 15px;
+  font-size: 15px;
+  border-radius: 5px;
+}
+.category-addtocart-btn:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+.category-heart:hover {
+  cursor: pointer;
+}
+.category-image-grid {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 300px;
+}
+.category-routerlink {
+  text-decoration: none;
+}
+.category-price {
+  font-size: 15px;
+  font-weight: bold;
+}
+.category-country {
+  color: silver;
+  font-size: 13px;
+}
+.category-descrition {
+  color: silver;
+}
+.category-offer-badge {
+  background-color: brown;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+  width: fit-content;
+  font-weight: bold;
+  font-size: 14px;
+}
