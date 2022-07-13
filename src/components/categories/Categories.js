@@ -177,6 +177,7 @@ const Categories = () => {
           </Toolbar>
         </AppBar>
         <FilterItems
+          categoryCollection={categoryCollection}
           uniqueCategories={uniqueCategories}
           uniqueSizes={uniqueSizes}
           uniqueColors={uniqueColors}
