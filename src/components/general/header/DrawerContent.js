@@ -1,3 +1,5 @@
+import { Fragment, useState } from "react";
+
 import { Badge, Stack } from "@mui/material";
 import { Link } from "react-router-dom";
 
@@ -8,14 +10,15 @@ import PersonIcon from "@mui/icons-material/Person";
 
 import classes from "./Header.module.css";
 import { navbarLinks, iconsStyle } from "./headerData";
-import { Fragment } from "react";
+import SearchDialogBox from "./SearchDialogBox";
 
 const DrawerContent = () => {
+  const [open, setOpen] = useState(false);
   return (
     <>
       <Stack
         direction="column"
-        rowGap={2}
+        rowGap={1}
         justifyContent="center"
         alignItems="center"
       >
@@ -33,13 +36,14 @@ const DrawerContent = () => {
           </Fragment>
         ))}
 
-        <SearchIcon sx={iconsStyle} />
+        <SearchIcon sx={iconsStyle} onClick={() => setOpen(true)} />
         <FavoriteBorderIcon sx={iconsStyle} />
         <Badge badgeContent={1} color="error">
           <ShoppingCartIcon sx={iconsStyle} />
         </Badge>
         <PersonIcon sx={iconsStyle} />
       </Stack>
+      <SearchDialogBox open={open} setOpen={setOpen} />
     </>
   );
 };

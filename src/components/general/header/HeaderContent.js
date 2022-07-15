@@ -5,14 +5,14 @@ import SearchIcon from "@mui/icons-material/Search";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import PersonIcon from "@mui/icons-material/Person";
-import Dialog from "@mui/material/Dialog";
+
 import { Grid, Stack, Hidden, Badge } from "@mui/material";
 import { Link } from "react-router-dom";
 
 import classes from "./Header.module.css";
 import { navbarLinks, iconsStyle } from "./headerData";
-import Input from "../../UI/Input";
-import Button from "../../UI/Button";
+
+import SearchDialogBox from "./SearchDialogBox";
 
 const HeaderContent = props => {
   const [open, setOpen] = useState(false);
@@ -75,44 +75,7 @@ const HeaderContent = props => {
             />
           </Grid>
         </Hidden>
-        <Dialog open={open} onClose={() => setOpen(false)}>
-          <Stack
-            sx={{
-              width: "300px",
-            }}
-            p={3}
-            direction="column"
-            rowGap={1}
-            justifyContent="center"
-            alignItems="center"
-          >
-            <h2>Search</h2>
-
-            <Input
-              classes={classes["dialogbox-inputfields"]}
-              type={"text"}
-              placeholder={"Search here..."}
-            />
-            <Stack
-              width="100%"
-              direction="row"
-              columnGap={2}
-              justifyContent="flex-end"
-              alingItems="center"
-            >
-              <Button
-                classes={classes["dialogbox-button-cancel"]}
-                name={"Cancel"}
-                onClick={() => setOpen(false)}
-              />
-              <Button
-                classes={classes["dialogbox-button-action"]}
-                name={"Search"}
-                onClick={() => setOpen(false)}
-              />
-            </Stack>
-          </Stack>
-        </Dialog>
+        <SearchDialogBox open={open} setOpen={setOpen} />
       </Grid>
     </>
   );

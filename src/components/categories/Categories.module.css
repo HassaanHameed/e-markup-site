@@ -94,3 +94,7 @@
   background-color: black;
   color: white;
 }
+.category-price-with-offer {
+  text-decoration: line-through;
+  color: silver;
+}

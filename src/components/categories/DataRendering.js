@@ -26,8 +26,7 @@ const DataRendering = props => {
             rating,
             reviews,
             color,
-            minPrice,
-            maxPrice,
+            price,
             img,
             offer,
           }) => (
@@ -47,10 +46,12 @@ const DataRendering = props => {
                       backgroundImage: `url(https://picsum.photos/200)`,
                     }}
                   >
-                    <Heading
-                      name={offer}
-                      classes={classes["category-offer-badge"]}
-                    />
+                    {offer && (
+                      <Heading
+                        name={`${Math.round((offer / price) * 100)}% OFF`}
+                        classes={classes["category-offer-badge"]}
+                      />
+                    )}
                   </Box>
                   <Box
                     padding={{
@@ -77,10 +78,29 @@ const DataRendering = props => {
                         classes={classes["category-cat"]}
                         name={`${category}`}
                       />
-                      <Heading
-                        classes={classes["category-price"]}
-                        name={`$${minPrice} - $${maxPrice}`}
-                      />
+                      {offer ? (
+                        <Stack
+                          direction="row"
+                          alignItems="center"
+                          columnGap={1}
+                        >
+                          <Heading
+                            classes={classes["category-price-with-offer"]}
+                            name={`$${price}`}
+                          />
+                          <Heading
+                            classes={classes["category-price"]}
+                            name={`$${
+                              price - Math.round((price / 100) * offer)
+                            }`}
+                          />
+                        </Stack>
+                      ) : (
+                        <Heading
+                          classes={classes["category-price"]}
+                          name={`$${price}`}
+                        />
+                      )}
                       <Stack direction="row" columnGap={1} alignItems="center">
                         <Rating
                           name="half-rating-read"

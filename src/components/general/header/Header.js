@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 
 import { Box, Drawer } from "@mui/material";
 
@@ -12,7 +12,6 @@ export default function TemporaryDrawer() {
     bottom: false,
     right: false,
   });
-
   const toggleDrawer = (anchor, open) => event => {
     if (
       event.type === "keydown" &&
@@ -31,7 +30,6 @@ export default function TemporaryDrawer() {
         padding: "10px 0px",
       }}
       role="presentation"
-      onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <DrawerContent />
@@ -44,7 +42,7 @@ export default function TemporaryDrawer() {
       <Drawer
         sx={{
           "& .css-4t3x6l-MuiPaper-root-MuiDrawer-paper": {
-            backgroundColor: "#232323",
+            backgroundColor: "#232323 !important",
           },
         }}
         anchor={"left"}

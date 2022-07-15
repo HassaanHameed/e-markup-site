@@ -45,10 +45,10 @@ export const categoryCollection = [
     rating: 4,
     reviews: 144,
     color: "orange & white",
-    minPrice: 144,
-    maxPrice: 150,
+    price: 144,
+
     img: Chair1,
-    offer: "16% OFF",
+    offer: null,
   },
   {
     id: "c2",
@@ -60,10 +60,10 @@ export const categoryCollection = [
     rating: 3.5,
     reviews: 100,
     color: "white",
-    minPrice: 100,
-    maxPrice: 105,
+    price: 150,
+
     img: Chair3,
-    offer: "16% OFF",
+    offer: 11,
   },
   {
     id: "c3",
@@ -75,10 +75,10 @@ export const categoryCollection = [
     rating: 5,
     reviews: 200,
     color: "white",
-    minPrice: 80,
-    maxPrice: 95,
+    price: 80,
+
     img: Chair4,
-    offer: "16% OFF",
+    offer: 16,
   },
   {
     id: "b1",
@@ -90,10 +90,10 @@ export const categoryCollection = [
     rating: 4.5,
     reviews: 20,
     color: "brown",
-    minPrice: 150,
-    maxPrice: 200,
+    price: 150,
+
     img: Bed1,
-    offer: "16% OFF",
+    offer: 16,
   },
   {
     id: "b2",
@@ -105,10 +105,10 @@ export const categoryCollection = [
     rating: 4.3,
     reviews: 200,
     color: "black",
-    minPrice: 150,
-    maxPrice: 200,
+    price: 150,
+
     img: Bed2,
-    offer: "16% OFF",
+    offer: 16,
   },
   {
     id: "b3",
@@ -120,10 +120,10 @@ export const categoryCollection = [
     rating: 5,
     reviews: 350,
     color: "white",
-    minPrice: 190,
-    maxPrice: 200,
+    price: 190,
+
     img: Bed3,
-    offer: "16% OFF",
+    offer: 16,
   },
   {
     id: "b4",
@@ -135,10 +135,10 @@ export const categoryCollection = [
     rating: 3.8,
     reviews: 150,
     color: "golden-black",
-    minPrice: 300,
-    maxPrice: 310,
+    price: 300,
+
     img: Bed4,
-    offer: "16% OFF",
+    offer: 16,
   },
   {
     id: "b5",
@@ -150,10 +150,10 @@ export const categoryCollection = [
     rating: 4,
     reviews: 80,
     color: "brown-black",
-    minPrice: 100,
-    maxPrice: 150,
+    price: 100,
+
     img: Bed5,
-    offer: "16% OFF",
+    offer: 16,
   },
   {
     id: "cl1",
@@ -165,10 +165,10 @@ export const categoryCollection = [
     rating: 5,
     reviews: 700,
     color: "black",
-    minPrice: 20,
-    maxPrice: 22,
+    price: 20,
+
     img: Cloth1,
-    offer: "16% OFF",
+    offer: 16,
   },
   {
     id: "cl2",
@@ -180,10 +180,10 @@ export const categoryCollection = [
     rating: 4.8,
     reviews: 400,
     color: "sky-blue",
-    minPrice: 30,
-    maxPrice: 31,
+    price: 30,
+
     img: Cloth2,
-    offer: "16% OFF",
+    offer: 16,
   },
   {
     id: "pr1",
@@ -195,10 +195,10 @@ export const categoryCollection = [
     rating: 5,
     reviews: 600,
     color: "red",
-    minPrice: 122,
-    maxPrice: 130,
+    price: 122,
+
     img: Perfume1,
-    offer: "16% OFF",
+    offer: 16,
   },
   {
     id: "pr2",
@@ -210,10 +210,10 @@ export const categoryCollection = [
     rating: 5,
     reviews: 100,
     color: "yellow",
-    minPrice: 50,
-    maxPrice: 70,
+    price: 50,
+
     img: Perfume2,
-    offer: "16% OFF",
+    offer: 16,
   },
   {
     id: "pr3",
@@ -225,10 +225,10 @@ export const categoryCollection = [
     rating: 5,
     reviews: 100,
     color: "yellow",
-    minPrice: 50,
-    maxPrice: 70,
+    price: 50,
+
     img: Perfume3,
-    offer: "16% OFF",
+    offer: 16,
   },
   {
     id: "pr4",
@@ -240,10 +240,10 @@ export const categoryCollection = [
     rating: 5,
     reviews: 100,
     color: "yellow",
-    minPrice: 50,
-    maxPrice: 70,
+    price: 50,
+
     img: Perfume4,
-    offer: "16% OFF",
+    offer: 16,
   },
   {
     id: "pr5",
@@ -255,10 +255,10 @@ export const categoryCollection = [
     rating: 5,
     reviews: 100,
     color: "yellow",
-    minPrice: 50,
-    maxPrice: 70,
+    price: 50,
+
     img: Perfume5,
-    offer: "16% OFF",
+    offer: 16,
   },
   {
     id: "sh1",
@@ -270,10 +270,10 @@ export const categoryCollection = [
     rating: 5,
     reviews: 100,
     color: "orange",
-    minPrice: 50,
-    maxPrice: 70,
+    price: 50,
+
     img: Shoes1,
-    offer: "16% OFF",
+    offer: 16,
   },
   {
     id: "sh2",
@@ -285,10 +285,10 @@ export const categoryCollection = [
     rating: 5,
     reviews: 100,
     color: "orange",
-    minPrice: 50,
-    maxPrice: 70,
+    price: 50,
+
     img: Shoes2,
-    offer: "16% OFF",
+    offer: 16,
   },
   {
     id: "sh3",
@@ -300,10 +300,10 @@ export const categoryCollection = [
     rating: 5,
     reviews: 100,
     color: "orange",
-    minPrice: 50,
-    maxPrice: 70,
+    price: 50,
+
     img: Shoes3,
-    offer: "16% OFF",
+    offer: 16,
   },
   {
     id: "sh4",
@@ -315,10 +315,10 @@ export const categoryCollection = [
     rating: 5,
     reviews: 100,
     color: "orange",
-    minPrice: 50,
-    maxPrice: 70,
+    price: 50,
+
     img: Shoes4,
-    offer: "16% OFF",
+    offer: 16,
   },
   {
     id: "sh5",
@@ -330,10 +330,10 @@ export const categoryCollection = [
     rating: 5,
     reviews: 100,
     color: "orange",
-    minPrice: 50,
-    maxPrice: 70,
+    price: 50,
+
     img: Shoes5,
-    offer: "16% OFF",
+    offer: 16,
   },
   {
     id: "tb1",
@@ -345,10 +345,10 @@ export const categoryCollection = [
     rating: 5,
     reviews: 367,
     color: "off-white",
-    minPrice: 200,
-    maxPrice: 220,
+    price: 200,
+
     img: Table1,
-    offer: "16% OFF",
+    offer: 16,
   },
   {
     id: "tb2",
@@ -360,10 +360,10 @@ export const categoryCollection = [
     rating: 5,
     reviews: 367,
     color: "orange",
-    minPrice: 200,
-    maxPrice: 220,
+    price: 200,
+
     img: Table2,
-    offer: "16% OFF",
+    offer: 16,
   },
   {
     id: "tb3",
@@ -375,10 +375,10 @@ export const categoryCollection = [
     rating: 5,
     reviews: 367,
     color: "black",
-    minPrice: 200,
-    maxPrice: 220,
+    price: 200,
+
     img: Table3,
-    offer: "16% OFF",
+    offer: 16,
   },
   {
     id: "w1",
@@ -390,10 +390,10 @@ export const categoryCollection = [
     rating: 5,
     reviews: 2000,
     color: "golden-blue",
-    minPrice: 2000,
-    maxPrice: 6000,
+    price: 2000,
+
     img: Watch1,
-    offer: "16% OFF",
+    offer: 16,
   },
   {
     id: "w2",
@@ -405,10 +405,10 @@ export const categoryCollection = [
     rating: 5,
     reviews: 2000,
     color: "white-orange",
-    minPrice: 2000,
-    maxPrice: 6000,
+    price: 2000,
+
     img: Watch2,
-    offer: "16% OFF",
+    offer: 16,
   },
   {
     id: "w3",
@@ -420,10 +420,10 @@ export const categoryCollection = [
     rating: 5,
     reviews: 2000,
     color: "white-black",
-    minPrice: 2000,
-    maxPrice: 6000,
+    price: 2000,
+
     img: Watch3,
-    offer: "16% OFF",
+    offer: 16,
   },
   {
     id: "w4",
@@ -435,10 +435,10 @@ export const categoryCollection = [
     rating: 5,
     reviews: 2000,
     color: "golden-black",
-    minPrice: 2000,
-    maxPrice: 6000,
+    price: 2000,
+
     img: Watch4,
-    offer: "16% OFF",
+    offer: 16,
   },
   {
     id: "w5",
@@ -450,10 +450,10 @@ export const categoryCollection = [
     rating: 5,
     reviews: 2000,
     color: "white-orange",
-    minPrice: 2000,
-    maxPrice: 6000,
+    price: 6000,
+
     img: Watch5,
-    offer: "16% OFF",
+    offer: 16,
   },
   {
     id: "w6",
@@ -465,9 +465,9 @@ export const categoryCollection = [
     rating: 5,
     reviews: 2000,
     color: "golden-blue",
-    minPrice: 2000,
-    maxPrice: 6000,
+    price: 2000,
+
     img: Watch6,
-    offer: "16% OFF",
+    offer: 16,
   },
 ];

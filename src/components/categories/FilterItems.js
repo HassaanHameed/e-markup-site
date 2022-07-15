@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
@@ -13,27 +13,30 @@ import Button from "../UI/Button";
 import classes from "./Categories.module.css";
 
 const FilterItems = props => {
-  const [value, setValue] = useState([0, 2000]);
+  const [value, setValue] = useState(null);
   const [categoryChipOpen, setCategoryChipOpen] = useState({
     action: false,
     value: "",
   });
 
+  const prices = props.categoryCollection.flatMap(item => item.price);
+  const sumOfPrices = Math.max(...prices);
+  useEffect(() => {
+    setValue([0, sumOfPrices]);
+  }, [sumOfPrices]);
+
   let gettingSizes = [];
   let gettingColors = [];
-  let gettingPrices = [];
 
   const findDataRelatedCategory = val => {
     const getval = props.categoryCollection.filter(
       item => item.category === val
     );
+
     gettingSizes = getval.map(item => item.size);
 
     const uniqueColorsOfCategory = new Set(getval.map(item => item.color));
     uniqueColorsOfCategory.forEach(item => gettingColors.push(item));
-
-    // gettingPrices = getval.map(item => item.size);
-    // console.log(gettingSizes);
   };
   const onDeleteHandler = () => {
     gettingSizes = [];
@@ -97,9 +100,9 @@ const FilterItems = props => {
             onChange={e => setValue(e.target.value)}
             valueLabelDisplay="auto"
             min={0}
-            max={2000}
+            max={sumOfPrices}
           />
-          <Heading name={`$${value[0]} - $${value[1]}`} />
+          <Heading name={`$${value && value[0]} - $${value && value[1]}`} />
           <Button name={"Filter"} classes={classes["price-filter-btn"]} />
         </AccordionDetails>
       </Accordion>
