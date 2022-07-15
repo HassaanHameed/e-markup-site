@@ -7,10 +7,7 @@ import HeaderContent from "./HeaderContent";
 
 export default function TemporaryDrawer() {
   const [state, setState] = useState({
-    top: false,
     left: false,
-    bottom: false,
-    right: false,
   });
   const toggleDrawer = (anchor, open) => event => {
     if (
@@ -26,11 +23,13 @@ export default function TemporaryDrawer() {
   const list = anchor => (
     <Box
       sx={{
-        width: anchor === "top" || anchor === "bottom" ? "auto" : 250,
-        padding: "10px 0px",
+        padding: "20px",
+        backgroundColor: "#232323 !important",
+        minHeight: "90vh",
+        height: "100%",
       }}
       role="presentation"
-      onKeyDown={toggleDrawer(anchor, false)}
+      onClose={toggleDrawer("left", false)}
     >
       <DrawerContent />
     </Box>

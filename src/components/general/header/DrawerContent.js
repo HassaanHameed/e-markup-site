@@ -16,12 +16,7 @@ const DrawerContent = () => {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <Stack
-        direction="column"
-        rowGap={1}
-        justifyContent="center"
-        alignItems="center"
-      >
+      <Stack direction="column" justifyContent="center" alignItems="center">
         <Link to="/" className={classes["navbar-heading"]}>
           E-Markup
         </Link>
@@ -35,13 +30,14 @@ const DrawerContent = () => {
             </Link>
           </Fragment>
         ))}
-
-        <SearchIcon sx={iconsStyle} onClick={() => setOpen(true)} />
-        <FavoriteBorderIcon sx={iconsStyle} />
-        <Badge badgeContent={1} color="error">
-          <ShoppingCartIcon sx={iconsStyle} />
-        </Badge>
-        <PersonIcon sx={iconsStyle} />
+        <Stack mt={1} direction="row" alignItems="center" columnGap={1}>
+          <SearchIcon sx={iconsStyle} onClick={() => setOpen(true)} />
+          <FavoriteBorderIcon sx={iconsStyle} />
+          <Badge badgeContent={1} color="error">
+            <ShoppingCartIcon sx={iconsStyle} />
+          </Badge>
+          <PersonIcon sx={iconsStyle} />
+        </Stack>
       </Stack>
       <SearchDialogBox open={open} setOpen={setOpen} />
     </>

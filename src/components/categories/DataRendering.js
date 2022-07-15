@@ -31,7 +31,12 @@ const DataRendering = props => {
             offer,
           }) => (
             <Fragment key={id}>
-              <Grid item xs={12} md={props.layout ? 4 : 12} p={2}>
+              <Grid
+                item
+                xs={12}
+                md={props.layout ? 4 : 12}
+                p={{ xs: 0, md: 2 }}
+              >
                 <Stack
                   direction={{
                     xs: "column",

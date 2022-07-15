@@ -6,13 +6,13 @@ import { Dialog, Stack } from "@mui/material";
 
 import classes from "./Header.module.css";
 
-const SearchDialogBox = props => {
+const SearchDialogBox = ({ open, setOpen }) => {
   return (
     <>
-      <Dialog open={props.open} onClose={() => props.setOpen(false)}>
+      <Dialog open={open}>
         <Stack
           sx={{
-            width: "300px",
+            width: "200px",
           }}
           p={3}
           direction="column"
@@ -37,12 +37,12 @@ const SearchDialogBox = props => {
             <Button
               classes={classes["dialogbox-button-cancel"]}
               name={"Cancel"}
-              onClick={() => props.setOpen(false)}
+              onClick={() => setOpen(false)}
             />
             <Button
               classes={classes["dialogbox-button-action"]}
               name={"Search"}
-              onClick={() => props.setOpen(false)}
+              onClick={() => setOpen(false)}
             />
           </Stack>
         </Stack>
