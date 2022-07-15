@@ -8,6 +8,8 @@ import CustomButton from "../UI/Button";
 import RouterLink from "../UI/RouterLink";
 import Heading from "../UI/Heading";
 
+import GeneralImg from "../../assets/smallpics/general.jfif";
+
 import classes from "./Categories.module.css";
 
 const DataRendering = props => {
@@ -46,9 +48,8 @@ const DataRendering = props => {
                   <Box
                     p={3}
                     className={classes["category-image-grid"]}
-                    // sx={{ backgroundImage: `url(${img})` }}
                     sx={{
-                      backgroundImage: `url(https://picsum.photos/200)`,
+                      backgroundImage: `url(${GeneralImg})`,
                     }}
                   >
                     {offer && (

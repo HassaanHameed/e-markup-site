@@ -6,8 +6,7 @@ import {
   homeCategoryItems,
   modernDesignStyles,
 } from "./homeData";
-import TableImg from "../../assets/table.jpg";
-
+import DiscoverImg from "../../assets/smallpics/discover.jfif";
 const Home = () => {
   return (
     <>
@@ -74,7 +73,7 @@ const Home = () => {
         <Grid item xs={12} sm={6}>
           <img
             className={classes["home-table-img"]}
-            src={TableImg}
+            src={DiscoverImg}
             alt="Table"
           />
         </Grid>

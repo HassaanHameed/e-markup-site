@@ -1,39 +1,3 @@
-import Bed1 from "../../assets/bed1.jpg";
-import Bed2 from "../../assets/bed2.jpg";
-import Bed3 from "../../assets/bed3.jpg";
-import Bed4 from "../../assets/bed4.jpg";
-import Bed5 from "../../assets/bed5.jpg";
-
-import Chair1 from "../../assets/chair1.jpg";
-import Chair3 from "../../assets/chair3.jpg";
-import Chair4 from "../../assets/chair4.jpg";
-
-import Cloth1 from "../../assets/cloth1.jpg";
-import Cloth2 from "../../assets/cloth3.jpg";
-
-import Perfume1 from "../../assets/perfume1.jpg";
-import Perfume2 from "../../assets/perfume2.jpg";
-import Perfume3 from "../../assets/perfume3.jpg";
-import Perfume4 from "../../assets/perfume4.jpg";
-import Perfume5 from "../../assets/perfume5.jpg";
-
-import Shoes1 from "../../assets/shoes1.jpg";
-import Shoes2 from "../../assets/shoes2.jpg";
-import Shoes3 from "../../assets/shoes3.jpg";
-import Shoes4 from "../../assets/shoes4.jpg";
-import Shoes5 from "../../assets/shoes5.jpg";
-
-import Table1 from "../../assets/table1.jpg";
-import Table2 from "../../assets/table2.jpg";
-import Table3 from "../../assets/table3.jpg";
-
-import Watch1 from "../../assets/watch1.jpg";
-import Watch2 from "../../assets/watch2.jpg";
-import Watch3 from "../../assets/watch3.jpg";
-import Watch4 from "../../assets/watch4.jpg";
-import Watch5 from "../../assets/watch5.jpg";
-import Watch6 from "../../assets/watch6.jpg";
-
 export const categoryCollection = [
   {
     id: "c1",
@@ -47,7 +11,7 @@ export const categoryCollection = [
     color: "orange & white",
     price: 144,
 
-    img: Chair1,
+    // img: Chair1,
     offer: null,
   },
   {
@@ -62,7 +26,7 @@ export const categoryCollection = [
     color: "white",
     price: 150,
 
-    img: Chair3,
+    // img: Chair3,
     offer: 11,
   },
   {
@@ -77,7 +41,7 @@ export const categoryCollection = [
     color: "white",
     price: 80,
 
-    img: Chair4,
+    // img: Chair4,
     offer: 16,
   },
   {
@@ -92,7 +56,7 @@ export const categoryCollection = [
     color: "brown",
     price: 150,
 
-    img: Bed1,
+    // img: Bed1,
     offer: 16,
   },
   {
@@ -107,7 +71,7 @@ export const categoryCollection = [
     color: "black",
     price: 150,
 
-    img: Bed2,
+    // img: Bed2,
     offer: 16,
   },
   {
@@ -122,7 +86,7 @@ export const categoryCollection = [
     color: "white",
     price: 190,
 
-    img: Bed3,
+    // img: Bed3,
     offer: 16,
   },
   {
@@ -137,7 +101,7 @@ export const categoryCollection = [
     color: "golden-black",
     price: 300,
 
-    img: Bed4,
+    // img: Bed4,
     offer: 16,
   },
   {
@@ -152,7 +116,7 @@ export const categoryCollection = [
     color: "brown-black",
     price: 100,
 
-    img: Bed5,
+    // img: Bed5,
     offer: 16,
   },
   {
@@ -167,7 +131,7 @@ export const categoryCollection = [
     color: "black",
     price: 20,
 
-    img: Cloth1,
+    // img: Cloth1,
     offer: 16,
   },
   {
@@ -182,7 +146,7 @@ export const categoryCollection = [
     color: "sky-blue",
     price: 30,
 
-    img: Cloth2,
+    // img: Cloth2,
     offer: 16,
   },
   {
@@ -197,7 +161,7 @@ export const categoryCollection = [
     color: "red",
     price: 122,
 
-    img: Perfume1,
+    // img: Perfume1,
     offer: 16,
   },
   {
@@ -212,7 +176,7 @@ export const categoryCollection = [
     color: "yellow",
     price: 50,
 
-    img: Perfume2,
+    // img: Perfume2,
     offer: 16,
   },
   {
@@ -227,7 +191,7 @@ export const categoryCollection = [
     color: "yellow",
     price: 50,
 
-    img: Perfume3,
+    // img: Perfume3,
     offer: 16,
   },
   {
@@ -242,7 +206,7 @@ export const categoryCollection = [
     color: "yellow",
     price: 50,
 
-    img: Perfume4,
+    // img: Perfume4,
     offer: 16,
   },
   {
@@ -257,7 +221,7 @@ export const categoryCollection = [
     color: "yellow",
     price: 50,
 
-    img: Perfume5,
+    // img: Perfume5,
     offer: 16,
   },
   {
@@ -272,7 +236,7 @@ export const categoryCollection = [
     color: "orange",
     price: 50,
 
-    img: Shoes1,
+    // img: Shoes1,
     offer: 16,
   },
   {
@@ -287,7 +251,7 @@ export const categoryCollection = [
     color: "orange",
     price: 50,
 
-    img: Shoes2,
+    // img: Shoes2,
     offer: 16,
   },
   {
@@ -302,7 +266,7 @@ export const categoryCollection = [
     color: "orange",
     price: 50,
 
-    img: Shoes3,
+    // img: Shoes3,
     offer: 16,
   },
   {
@@ -317,7 +281,7 @@ export const categoryCollection = [
     color: "orange",
     price: 50,
 
-    img: Shoes4,
+    // img: Shoes4,
     offer: 16,
   },
   {
@@ -332,7 +296,7 @@ export const categoryCollection = [
     color: "orange",
     price: 50,
 
-    img: Shoes5,
+    // img: Shoes5,
     offer: 16,
   },
   {
@@ -347,7 +311,7 @@ export const categoryCollection = [
     color: "off-white",
     price: 200,
 
-    img: Table1,
+    // img: Table1,
     offer: 16,
   },
   {
@@ -362,7 +326,7 @@ export const categoryCollection = [
     color: "orange",
     price: 200,
 
-    img: Table2,
+    // img: Table2,
     offer: 16,
   },
   {
@@ -377,7 +341,7 @@ export const categoryCollection = [
     color: "black",
     price: 200,
 
-    img: Table3,
+    // img: Table3,
     offer: 16,
   },
   {
@@ -392,7 +356,7 @@ export const categoryCollection = [
     color: "golden-blue",
     price: 2000,
 
-    img: Watch1,
+    // img: Watch1,
     offer: 16,
   },
   {
@@ -407,7 +371,7 @@ export const categoryCollection = [
     color: "white-orange",
     price: 2000,
 
-    img: Watch2,
+    // img: Watch2,
     offer: 16,
   },
   {
@@ -422,7 +386,7 @@ export const categoryCollection = [
     color: "white-black",
     price: 2000,
 
-    img: Watch3,
+    // img: Watch3,
     offer: 16,
   },
   {
@@ -437,7 +401,7 @@ export const categoryCollection = [
     color: "golden-black",
     price: 2000,
 
-    img: Watch4,
+    // img: Watch4,
     offer: 16,
   },
   {
@@ -452,7 +416,7 @@ export const categoryCollection = [
     color: "white-orange",
     price: 6000,
 
-    img: Watch5,
+    // img: Watch5,
     offer: 16,
   },
   {
@@ -467,7 +431,7 @@ export const categoryCollection = [
     color: "golden-blue",
     price: 2000,
 
-    img: Watch6,
+    // img: Watch6,
     offer: 16,
   },
 ];

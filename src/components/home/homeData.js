@@ -1,15 +1,10 @@
-import ImageBg from "../../assets/lamp2-min.jpg";
-import BedImg from "../../assets/bed.jpg";
-import ChairImg from "../../assets/chairs.jpg";
-import ModernDesignBg from "../../assets/modern-desgin-background.jpg";
-import LampImg from "../../assets/lamp5.jpg";
-import GalleryImg from "../../assets/gallery.jpg";
+import ModernDesignBg from "../../assets/smallpics/moderndesgin.jfif";
+import BedImg from "../../assets/smallpics/bedspread.jfif";
+import ChairImg from "../../assets/smallpics/chairs.jfif";
+import GalleryImg from "../../assets/smallpics/gallery.jfif";
+import LampImg from "../../assets/smallpics/lamp.jfif";
 
 export const homeContainerStyle = {
-  // backgroundImage: `url(${ImageBg})`,
-  // backgroundSize: "cover",
-  // backgroundPosition: "center center",
-  // backgroundRepeat: "no-repeat",
   background: `linear-gradient(to right, #b92b27, #1565c0)`,
   width: "100%",
   height: "100%",
@@ -47,5 +42,4 @@ export const modernDesignStyles = {
   width: "100%",
   height: "400px",
   textTransform: "uppercase",
-  color: "white",
 };
