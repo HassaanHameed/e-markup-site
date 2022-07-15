@@ -16,7 +16,7 @@ const DataRendering = props => {
   return (
     <>
       {props.categoryCollection
-        .slice(0, 6)
+        .slice(0, props.showItems ? props.showItems : 6)
         .map(
           ({
             id,
@@ -107,31 +107,39 @@ const DataRendering = props => {
                           name={`$${price}`}
                         />
                       )}
-                      <Stack direction="row" columnGap={1} alignItems="center">
-                        <Rating
-                          name="half-rating-read"
-                          defaultValue={rating}
-                          precision={0.5}
-                          readOnly
+                      {!props.layout && (
+                        <Stack
+                          direction="row"
+                          columnGap={1}
+                          alignItems="center"
+                        >
+                          <Rating
+                            name="half-rating-read"
+                            defaultValue={rating}
+                            precision={0.5}
+                            readOnly
+                          />
+                          <Heading name={`(${reviews} reviews)`} />
+                        </Stack>
+                      )}
+                      {!props.layout && (
+                        <Heading
+                          classes={classes["category-descrition"]}
+                          name={`${desc}`}
                         />
-                        <Heading name={`(${reviews} reviews)`} />
-                      </Stack>
-                      <Heading
-                        classes={classes["category-descrition"]}
-                        name={`${desc}`}
-                      />
+                      )}
 
                       <Stack direction="row" columnGap={1} alignItems="center">
                         <Heading
                           classes={classes["category-price"]}
-                          name={"Available Colors:"}
+                          name={"Color:"}
                         />
                         <Heading name={color} />
                       </Stack>
                       <Stack direction="row" columnGap={1} alignItems="center">
                         <Heading
                           classes={classes["category-price"]}
-                          name={"Available Sizes:"}
+                          name={"Size:"}
                         />
 
                         <Heading name={`${size},`} />

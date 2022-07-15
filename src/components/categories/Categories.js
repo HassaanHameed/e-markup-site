@@ -10,6 +10,7 @@ import {
   Dialog,
   AppBar,
   Toolbar,
+  TablePagination,
 } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
@@ -31,6 +32,19 @@ const Transition = forwardRef(function Transition(props, ref) {
 const Categories = () => {
   const [layout, setLayout] = useState(false);
   const [open, setOpen] = useState(false);
+  const [showItems, setShowItems] = useState(null);
+
+  // const [page, setPage] = useState(2);
+  // const [rowsPerPage, setRowsPerPage] = useState(10);
+
+  // const handleChangePage = (event, newPage) => {
+  //   setPage(newPage);
+  // };
+
+  // const handleChangeRowsPerPage = event => {
+  //   setRowsPerPage(parseInt(event.target.value, 10));
+  //   setPage(0);
+  // };
 
   const uniqueCategories = [];
   const uniqueSizes = [];
@@ -121,12 +135,16 @@ const Categories = () => {
                     classes={classes["category-sortby-heading"]}
                     name={"SHOW:"}
                   />
-                  <select name="" id="">
-                    <option value="">10</option>
-                    <option value="">20</option>
-                    <option value="">30</option>
-                    <option value="">40</option>
-                    <option value="">50</option>
+                  <select
+                    name=""
+                    id=""
+                    value={showItems}
+                    onChange={e => setShowItems(e.target.value)}
+                  >
+                    <option value="6">6</option>
+                    <option value="12">12</option>
+                    <option value="24">24</option>
+                    <option value="30">30</option>
                   </select>
                   {layout ? (
                     <ViewListIcon
@@ -145,10 +163,28 @@ const Categories = () => {
           </Grid>
 
           <DataRendering
+            showItems={showItems}
+            setShowItems={setShowItems}
             categoryCollection={categoryCollection}
             layout={layout}
             setLayout={setLayout}
           />
+          {/* <Grid
+            item
+            xs={12}
+            justifyContent="center"
+            alignItems="center"
+            backgroundColor="tan"
+          >
+            <TablePagination
+              component="div"
+              count={100}
+              page={page}
+              onPageChange={handleChangePage}
+              rowsPerPage={rowsPerPage}
+              onRowsPerPageChange={handleChangeRowsPerPage}
+            />
+          </Grid> */}
         </Grid>
       </Grid>
 

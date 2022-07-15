@@ -5,7 +5,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Slider from "@mui/material/Slider";
-import { Typography, Grid, Chip, Stack } from "@mui/material";
+import { Typography, Grid, Chip, Stack, Box, Hidden } from "@mui/material";
 
 import Heading from "../UI/Heading";
 import Button from "../UI/Button";
@@ -15,6 +15,14 @@ import classes from "./Categories.module.css";
 const FilterItems = props => {
   const [value, setValue] = useState(null);
   const [categoryChipOpen, setCategoryChipOpen] = useState({
+    action: false,
+    value: "",
+  });
+  const [sizeChipOpen, setSizeChipOpen] = useState({
+    action: false,
+    value: "",
+  });
+  const [colorChipOpen, setColorChipOpen] = useState({
     action: false,
     value: "",
   });
@@ -33,15 +41,24 @@ const FilterItems = props => {
       item => item.category === val
     );
 
-    gettingSizes = getval.map(item => item.size);
+    const uniqueSizes = new Set(getval.map(item => item.size));
+    uniqueSizes.forEach(size => gettingSizes.push(size));
 
     const uniqueColorsOfCategory = new Set(getval.map(item => item.color));
     uniqueColorsOfCategory.forEach(item => gettingColors.push(item));
   };
-  const onDeleteHandler = () => {
+  const onCategoryDeleteHandler = () => {
     gettingSizes = [];
     gettingColors = [];
+    setSizeChipOpen(false);
+    setColorChipOpen(false);
     setCategoryChipOpen(false);
+  };
+  const onColorDeleteHandler = () => {
+    setColorChipOpen(false);
+  };
+  const onSizeDeleteHandler = () => {
+    setSizeChipOpen(false);
   };
   categoryChipOpen.action && findDataRelatedCategory(categoryChipOpen.value);
   return (
@@ -67,7 +84,7 @@ const FilterItems = props => {
                   <Heading name={"Selected Item:"} />
                   <Chip
                     label={categoryChipOpen.value}
-                    onDelete={onDeleteHandler}
+                    onDelete={onCategoryDeleteHandler}
                   />
                 </Stack>
               </Grid>
@@ -122,8 +139,23 @@ const FilterItems = props => {
               justifyContent="space-evenly"
               alignItems="center"
             >
+              {sizeChipOpen.action && (
+                <Grid item xs={12} mb={3}>
+                  <Stack alignItems={"center"} direction="row" columnGap={1}>
+                    <Heading name={"Selected Size:"} />
+                    <Chip
+                      label={sizeChipOpen.value}
+                      onDelete={onSizeDeleteHandler}
+                    />
+                  </Stack>
+                </Grid>
+              )}
               {gettingSizes.map((size, index) => (
-                <Grid item key={index}>
+                <Grid
+                  item
+                  onClick={() => setSizeChipOpen({ action: true, value: size })}
+                  key={index}
+                >
                   <Heading classes={classes["filter-category"]} name={size} />
                 </Grid>
               ))}
@@ -146,14 +178,34 @@ const FilterItems = props => {
             justifyContent="space-evenly"
             alignItems="center"
           >
+            {colorChipOpen.action && (
+              <Grid item xs={12} mb={3}>
+                <Stack alignItems={"center"} direction="row" columnGap={1}>
+                  <Heading name={"Selected Color:"} />
+                  <Chip
+                    label={colorChipOpen.value}
+                    onDelete={onColorDeleteHandler}
+                  />
+                </Stack>
+              </Grid>
+            )}
             {gettingColors.map((col, index) => (
-              <Grid item key={index}>
+              <Grid
+                item
+                onClick={() => setColorChipOpen({ action: true, value: col })}
+                key={index}
+              >
                 <Heading classes={classes["filter-category"]} name={col} />
               </Grid>
             ))}
           </Grid>
         </AccordionDetails>
       </Accordion>
+      <Hidden mdDown>
+        <Box>
+          <Button name={"Search"} classes={classes["filter-search-btn"]} />
+        </Box>
+      </Hidden>
     </>
   );
 };
