@@ -8,6 +8,7 @@ import Registration from "./components/myAccount/Registration";
 import ForgotPassword from "./components/myAccount/ForgotPassword";
 import ErrorPage from "./components/general/error/Error404";
 import Categories from "./components/categories/Categories";
+import Cart from "./components/cart/Cart";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
         <Route path="/registration" element={<Registration />} />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
         <Route path="/categories" element={<Categories />} />
+        <Route path="/cart/:id" element={<Cart />} />
       </Routes>
       <Footer />
     </BrowserRouter>
