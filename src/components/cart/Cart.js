@@ -1,7 +1,6 @@
-import React from "react";
-import { useParams } from "react-router-dom";
+import React, { Fragment } from "react";
 
-import { Grid, Stack } from "@mui/material";
+import { Grid } from "@mui/material";
 
 import Text from "../UI/Heading";
 import classes from "./Cart.module.css";
@@ -13,15 +12,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 
-import { categoryCollection } from "../categories/categoryData";
-
 const Cart = () => {
-  const id = useParams();
-  const { id: productId } = id;
-  const product = categoryCollection.find(product => product.id === productId);
-  console.log(product);
-  const { name, price, image, size, color, offer } = product;
-
   return (
     <>
       <Grid container padding="100px 5px" minHeight="90vh" rowGap={2}>
@@ -37,29 +28,25 @@ const Cart = () => {
                   <TableCell>Name</TableCell>
                   <TableCell>Size</TableCell>
                   <TableCell>Color</TableCell>
-                  {offer && <TableCell>Offer</TableCell>}
                   <TableCell>Price</TableCell>
+                  <TableCell>Action</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
                 <TableRow>
-                  <TableCell>
-                    <img
-                      src={GeneralImg}
-                      width="50px"
-                      height="50px"
-                      alt={name}
-                    />
-                  </TableCell>
-                  <TableCell>{name}</TableCell>
-                  <TableCell>{size}</TableCell>
-                  <TableCell>{color}</TableCell>
-                  {offer && <TableCell>{offer}</TableCell>}
-                  <TableCell>{price}</TableCell>
+                  <TableCell>Picture</TableCell>
+                  <TableCell>Name</TableCell>
+                  <TableCell>Size</TableCell>
+                  <TableCell>Color</TableCell>
+                  <TableCell>Price</TableCell>
+                  <TableCell>Action</TableCell>
                 </TableRow>
               </TableBody>
             </Table>
           </TableContainer>
+        </Grid>
+        <Grid item xs={12}>
+          <h3>Total Amount: $24</h3>
         </Grid>
         <Grid item xs={12}>
           <button>purchase</button>

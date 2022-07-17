@@ -116,7 +116,14 @@ const Categories = () => {
   //   setSearchedItems(filteredSearchedItems);
   //   console.log(searchedItems);
   // }
-
+  // create a function addToCart which receive id of item and add it to cart
+  let cart = [];
+  const addToCart = id => {
+    console.log(id);
+    const item = categoryCollection.find(item => item.id === id);
+    cart.push(item);
+    console.log(cart);
+  };
   return (
     <>
       <Grid container padding={{ xs: "0px 0px 400px 0px", md: "0px" }}>
@@ -514,11 +521,14 @@ const Categories = () => {
                             columnGap={1}
                             alignItems="center"
                           >
-                            <RouterLink
+                            {/* <RouterLink
                               address={`/cart/${id}`}
                               classes={classes["routerlink-addtocart"]}
                               name={<Heading name={"Add to Cart"} />}
-                            />
+                            /> */}
+                            <button onClick={() => addToCart(id)}>
+                              Add to Cart
+                            </button>
                             <FavoriteBorderIcon
                               className={classes["category-heart"]}
                             />

@@ -33,10 +33,14 @@ const DrawerContent = () => {
         <Stack mt={1} direction="row" alignItems="center" columnGap={1}>
           <SearchIcon sx={iconsStyle} onClick={() => setOpen(true)} />
           <FavoriteBorderIcon sx={iconsStyle} />
-          <Badge badgeContent={1} color="error">
-            <ShoppingCartIcon sx={iconsStyle} />
-          </Badge>
-          <PersonIcon sx={iconsStyle} />
+          <Link to={"/cart"}>
+            <Badge badgeContent={1} color="error">
+              <ShoppingCartIcon sx={iconsStyle} />
+            </Badge>
+          </Link>
+          <Link to={"/profile"}>
+            <PersonIcon sx={iconsStyle} />
+          </Link>
         </Stack>
       </Stack>
       <SearchDialogBox open={open} setOpen={setOpen} />
