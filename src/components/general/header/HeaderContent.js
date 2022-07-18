@@ -61,7 +61,7 @@ const HeaderContent = props => {
               <SearchIcon sx={iconsStyle} onClick={() => setOpen(true)} />
               <FavoriteBorderIcon sx={iconsStyle} />
               <Link to={"/cart"}>
-                <Badge badgeContent={1} color="error">
+                <Badge badgeContent={props.length} color="error">
                   <ShoppingCartIcon sx={iconsStyle} />
                 </Badge>
               </Link>

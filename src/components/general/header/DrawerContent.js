@@ -12,7 +12,7 @@ import classes from "./Header.module.css";
 import { navbarLinks, iconsStyle } from "./headerData";
 import SearchDialogBox from "./SearchDialogBox";
 
-const DrawerContent = () => {
+const DrawerContent = props => {
   const [open, setOpen] = useState(false);
   return (
     <>
@@ -34,7 +34,7 @@ const DrawerContent = () => {
           <SearchIcon sx={iconsStyle} onClick={() => setOpen(true)} />
           <FavoriteBorderIcon sx={iconsStyle} />
           <Link to={"/cart"}>
-            <Badge badgeContent={1} color="error">
+            <Badge badgeContent={props.length} color="error">
               <ShoppingCartIcon sx={iconsStyle} />
             </Badge>
           </Link>

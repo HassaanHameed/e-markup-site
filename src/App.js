@@ -34,9 +34,10 @@ const App = () => {
       console.log("Cart is empty");
     }
   };
+  const length = cart.length;
   return (
     <BrowserRouter>
-      <Header />
+      <Header length={length} />
       <Routes>
         <Route path="*" element={<ErrorPage />} />
         <Route path="/" element={<Home />} />

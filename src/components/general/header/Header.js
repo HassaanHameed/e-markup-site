@@ -5,7 +5,7 @@ import { Box, Drawer } from "@mui/material";
 import DrawerContent from "./DrawerContent";
 import HeaderContent from "./HeaderContent";
 
-export default function TemporaryDrawer() {
+export default function TemporaryDrawer(props) {
   const [state, setState] = useState({
     left: false,
   });
@@ -31,13 +31,13 @@ export default function TemporaryDrawer() {
       role="presentation"
       onClose={toggleDrawer("left", false)}
     >
-      <DrawerContent />
+      <DrawerContent length={props.length} />
     </Box>
   );
 
   return (
     <>
-      <HeaderContent toggleDrawer={toggleDrawer} />
+      <HeaderContent toggleDrawer={toggleDrawer} length={props.length} />
       <Drawer
         sx={{
           "& .css-4t3x6l-MuiPaper-root-MuiDrawer-paper": {
