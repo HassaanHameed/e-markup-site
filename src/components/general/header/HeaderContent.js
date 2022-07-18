@@ -21,12 +21,9 @@ const HeaderContent = props => {
       <Grid
         container
         p={2}
-        backgroundColor="rgba(0,0,0, 0.8)"
-        height="80px"
+        backgroundColor="black"
+        height="70px"
         alignItems="center"
-        position="fixed"
-        top="0"
-        zIndex="1"
       >
         <Grid item xs={6} md={2} color="white" textAlign={{ xs: "left" }}>
           <Link to="/" className={classes["navbar-heading"]}>

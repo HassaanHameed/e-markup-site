@@ -124,7 +124,7 @@ const Categories = props => {
 
   return (
     <>
-      <Grid container padding={{ xs: "0px 0px 400px 0px", md: "0px" }}>
+      <Grid container>
         <Grid
           item
           xs={12}
@@ -133,7 +133,7 @@ const Categories = props => {
           sx={{
             background: `linear-gradient(to right, #b92b27, #1565c0)`,
           }}
-          padding={"100px 0px"}
+          padding={"50px 0px"}
         >
           <Heading
             classes={classes["category-main-heading"]}
@@ -558,6 +558,155 @@ const Categories = props => {
               Filter Item
             </Typography>
           </Toolbar>
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <Typography>Categories</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Grid
+                container
+                spacing={1}
+                justifyContent="space-evenly"
+                alignItems="center"
+              >
+                {categoryChipOpen.action && (
+                  <Grid item xs={12} mb={3}>
+                    <Stack alignItems={"center"} direction="row" columnGap={1}>
+                      <Heading name={"Selected Item:"} />
+                      <Chip
+                        label={categoryChipOpen.value}
+                        onDelete={onCategoryDeleteHandler}
+                      />
+                    </Stack>
+                  </Grid>
+                )}
+                {uniqueCategories.map((cat, index) => (
+                  <Grid
+                    item
+                    key={index}
+                    onClick={() =>
+                      setCategoryChipOpen({ action: true, value: cat })
+                    }
+                  >
+                    <Heading classes={classes["filter-category"]} name={cat} />
+                  </Grid>
+                ))}
+              </Grid>
+            </AccordionDetails>
+          </Accordion>
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel2a-content"
+              id="panel2a-header"
+            >
+              <Typography>Price</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Slider
+                value={value}
+                onChange={e => setValue(e.target.value)}
+                valueLabelDisplay="auto"
+                min={0}
+                max={sumOfPrices}
+              />
+              <Heading name={`$${value && value[0]} - $${value && value[1]}`} />
+              <Button name={"Filter"} classes={classes["price-filter-btn"]} />
+            </AccordionDetails>
+          </Accordion>
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel2a-content"
+              id="panel2a-header"
+            >
+              <Typography>Size</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              {gettingSizes.length > 0 && (
+                <Grid
+                  container
+                  spacing={1}
+                  justifyContent="space-evenly"
+                  alignItems="center"
+                >
+                  {sizeChipOpen.action && (
+                    <Grid item xs={12} mb={3}>
+                      <Stack
+                        alignItems={"center"}
+                        direction="row"
+                        columnGap={1}
+                      >
+                        <Heading name={"Selected Size:"} />
+                        <Chip
+                          label={sizeChipOpen.value}
+                          onDelete={onSizeDeleteHandler}
+                        />
+                      </Stack>
+                    </Grid>
+                  )}
+                  {gettingSizes.map((size, index) => (
+                    <Grid
+                      item
+                      onClick={() =>
+                        setSizeChipOpen({ action: true, value: size })
+                      }
+                      key={index}
+                    >
+                      <Heading
+                        classes={classes["filter-category"]}
+                        name={size}
+                      />
+                    </Grid>
+                  ))}
+                </Grid>
+              )}
+            </AccordionDetails>
+          </Accordion>
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel3a-content"
+              id="panel3a-header"
+            >
+              <Typography>Color</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Grid
+                container
+                spacing={1}
+                justifyContent="space-evenly"
+                alignItems="center"
+              >
+                {colorChipOpen.action && (
+                  <Grid item xs={12} mb={3}>
+                    <Stack alignItems={"center"} direction="row" columnGap={1}>
+                      <Heading name={"Selected Color:"} />
+                      <Chip
+                        label={colorChipOpen.value}
+                        onDelete={onColorDeleteHandler}
+                      />
+                    </Stack>
+                  </Grid>
+                )}
+                {gettingColors.map((col, index) => (
+                  <Grid
+                    item
+                    onClick={() =>
+                      setColorChipOpen({ action: true, value: col })
+                    }
+                    key={index}
+                  >
+                    <Heading classes={classes["filter-category"]} name={col} />
+                  </Grid>
+                ))}
+              </Grid>
+            </AccordionDetails>
+          </Accordion>
         </AppBar>
       </Dialog>
       <Snackbar open={openSnack} autoHideDuration={2000} onClose={handleClose}>

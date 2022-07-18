@@ -11,7 +11,6 @@ const Home = () => {
   return (
     <>
       <Stack
-        padding={{ xs: "100px 0px", sm: "50px 0px", md: "10px 0px" }}
         direction="column"
         rowGap={2}
         alignItems="center"

@@ -8,8 +8,9 @@ export const homeContainerStyle = {
   background: `linear-gradient(to right, #b92b27, #1565c0)`,
   width: "100%",
   height: "100%",
-  minHeight: "100vh",
+  minHeight: "90vh",
   textAling: "center",
+  padding: "50px 0px",
 };
 
 export const homeCategoryItems = [

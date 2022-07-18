@@ -10,6 +10,7 @@ import ForgotPassword from "./components/myAccount/ForgotPassword";
 import ErrorPage from "./components/general/error/Error404";
 import Categories from "./components/categories/Categories";
 import Cart from "./components/cart/Cart";
+import Profile from "./components/profile/Profile";
 import { categoryCollection } from "./components/categories/categoryData";
 
 const App = () => {
@@ -52,6 +53,7 @@ const App = () => {
           path="/cart"
           element={<Cart cart={cart} removeCartItem={removeCartItem} />}
         />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
       <Footer />
     </BrowserRouter>
