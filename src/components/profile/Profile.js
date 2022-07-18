@@ -8,9 +8,10 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 
+import GeneralImg from "../../assets/smallpics/general.jfif";
+
 import classes from "./Profile.module.css";
 import Text from "../UI/Heading";
-import Button from "../UI/Button";
 
 const Profile = () => {
   // make state of name, email, cnic and get data from local storage and save it in state
@@ -72,23 +73,25 @@ const Profile = () => {
       ></div>
       <Text name={"Order History"} classes={classes["sub-heading"]} />
       <TableContainer sx={{ width: "90%" }} mx="auto">
-        <Table>
+        <Table aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell>Dessert (100g serving)</TableCell>
-              <TableCell align="right">Calories</TableCell>
-              <TableCell align="right">Fat&nbsp;(g)</TableCell>
-              <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-              <TableCell align="right">Protein&nbsp;(g)</TableCell>
+              <TableCell align="center">Picture</TableCell>
+              <TableCell align="center">Name</TableCell>
+              <TableCell align="center">Size</TableCell>
+              <TableCell align="center">Color</TableCell>
+              <TableCell align="center">Price</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             <TableRow>
-              <TableCell>Dessert (100g serving)</TableCell>
-              <TableCell align="right">Calories</TableCell>
-              <TableCell align="right">Fat&nbsp;(g)</TableCell>
-              <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-              <TableCell align="right">Protein&nbsp;(g)</TableCell>
+              <TableCell align="center">
+                <img src={GeneralImg} width="50px" height="50px" alt={name} />
+              </TableCell>
+              <TableCell align="center">Irani Chair</TableCell>
+              <TableCell align="center">4x3 ft</TableCell>
+              <TableCell align="center">Black</TableCell>
+              <TableCell align="center">$300</TableCell>
             </TableRow>
           </TableBody>
         </Table>
@@ -98,23 +101,25 @@ const Profile = () => {
       ></div>
       <Text name={"Order in Progress"} classes={classes["sub-heading"]} />
       <TableContainer sx={{ width: "90%" }} mx="auto">
-        <Table>
+        <Table aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell>Dessert (100g serving)</TableCell>
-              <TableCell align="right">Calories</TableCell>
-              <TableCell align="right">Fat&nbsp;(g)</TableCell>
-              <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-              <TableCell align="right">Protein&nbsp;(g)</TableCell>
+              <TableCell align="center">Picture</TableCell>
+              <TableCell align="center">Name</TableCell>
+              <TableCell align="center">Size</TableCell>
+              <TableCell align="center">Color</TableCell>
+              <TableCell align="center">Price</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             <TableRow>
-              <TableCell>Dessert (100g serving)</TableCell>
-              <TableCell align="right">Calories</TableCell>
-              <TableCell align="right">Fat&nbsp;(g)</TableCell>
-              <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-              <TableCell align="right">Protein&nbsp;(g)</TableCell>
+              <TableCell align="center">
+                <img src={GeneralImg} width="50px" height="50px" alt={name} />
+              </TableCell>
+              <TableCell align="center">Rose Marry</TableCell>
+              <TableCell align="center">45mm</TableCell>
+              <TableCell align="center">Black</TableCell>
+              <TableCell align="center">$2500</TableCell>
             </TableRow>
           </TableBody>
         </Table>
@@ -122,29 +127,6 @@ const Profile = () => {
       <div
         style={{ width: "90%", height: "2px", backgroundColor: "black" }}
       ></div>
-      <Text name={"Your wishlist"} classes={classes["sub-heading"]} />
-      <TableContainer sx={{ width: "90%" }} mx="auto">
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>Dessert (100g serving)</TableCell>
-              <TableCell align="right">Calories</TableCell>
-              <TableCell align="right">Fat&nbsp;(g)</TableCell>
-              <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-              <TableCell align="right">Protein&nbsp;(g)</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            <TableRow>
-              <TableCell>Dessert (100g serving)</TableCell>
-              <TableCell align="right">Calories</TableCell>
-              <TableCell align="right">Fat&nbsp;(g)</TableCell>
-              <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-              <TableCell align="right">Protein&nbsp;(g)</TableCell>
-            </TableRow>
-          </TableBody>
-        </Table>
-      </TableContainer>
     </Stack>
   );
 };

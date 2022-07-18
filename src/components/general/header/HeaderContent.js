@@ -56,7 +56,11 @@ const HeaderContent = props => {
               alignItems="center"
             >
               <SearchIcon sx={iconsStyle} onClick={() => setOpen(true)} />
-              <FavoriteBorderIcon sx={iconsStyle} />
+              <Link to={"/wishlist"}>
+                <Badge badgeContent={props.wishlistLength} color="error">
+                  <FavoriteBorderIcon sx={iconsStyle} />
+                </Badge>
+              </Link>
               <Link to={"/cart"}>
                 <Badge badgeContent={props.length} color="error">
                   <ShoppingCartIcon sx={iconsStyle} />

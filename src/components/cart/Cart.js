@@ -12,6 +12,8 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 
+import Button from "../UI/Button";
+
 const Cart = props => {
   // collect total amount from cart items
   let total = 0;
@@ -32,19 +34,19 @@ const Cart = props => {
                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
                   <TableHead>
                     <TableRow>
-                      <TableCell>Picture</TableCell>
-                      <TableCell>Name</TableCell>
-                      <TableCell>Size</TableCell>
-                      <TableCell>Color</TableCell>
-                      <TableCell>Price</TableCell>
-                      <TableCell>Action</TableCell>
+                      <TableCell align="center">Picture</TableCell>
+                      <TableCell align="center">Name</TableCell>
+                      <TableCell align="center">Size</TableCell>
+                      <TableCell align="center">Color</TableCell>
+                      <TableCell align="center">Price</TableCell>
+                      <TableCell align="center">Action</TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
                     {props.cart.map(({ id, name, size, color, price }) => (
                       <Fragment key={id}>
                         <TableRow>
-                          <TableCell>
+                          <TableCell align="center">
                             <img
                               src={GeneralImg}
                               width="50px"
@@ -52,14 +54,16 @@ const Cart = props => {
                               alt={name}
                             />
                           </TableCell>
-                          <TableCell>{name}</TableCell>
-                          <TableCell>{size}</TableCell>
-                          <TableCell>{color}</TableCell>
-                          <TableCell>{`$${price}`}</TableCell>
-                          <TableCell>
-                            <button onClick={() => props.removeCartItem(id)}>
-                              remove
-                            </button>
+                          <TableCell align="center">{name}</TableCell>
+                          <TableCell align="center">{size}</TableCell>
+                          <TableCell align="center">{color}</TableCell>
+                          <TableCell align="center">{`$${price}`}</TableCell>
+                          <TableCell align="center">
+                            <Button
+                              name={"Remove"}
+                              classes={classes["remove-btn"]}
+                              onClick={() => props.removeCartItem(id)}
+                            />
                           </TableCell>
                         </TableRow>
                       </Fragment>
@@ -72,13 +76,13 @@ const Cart = props => {
               <h3>Total Amount: {`$${total}`}</h3>
             </Grid>
             <Grid item xs={12}>
-              <button>purchase</button>
+              <Button name={"Purchase"} classes={classes["purchase-btn"]} />
             </Grid>
           </>
         ) : (
           <>
             <Grid item xs={12} textAlign="center">
-              <h2>No item added yet</h2>
+              <p>No item added yet</p>
             </Grid>
           </>
         )}

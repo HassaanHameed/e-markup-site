@@ -32,7 +32,9 @@ const DrawerContent = props => {
         ))}
         <Stack mt={1} direction="row" alignItems="center" columnGap={1}>
           <SearchIcon sx={iconsStyle} onClick={() => setOpen(true)} />
-          <FavoriteBorderIcon sx={iconsStyle} />
+          <Badge badgeContent={props.wishlistLength} color="error">
+            <FavoriteBorderIcon sx={iconsStyle} />
+          </Badge>
           <Link to={"/cart"}>
             <Badge badgeContent={props.length} color="error">
               <ShoppingCartIcon sx={iconsStyle} />

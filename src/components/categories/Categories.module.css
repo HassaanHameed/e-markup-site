@@ -30,6 +30,7 @@
 }
 .category-heart:hover {
   cursor: pointer;
+  color: brown;
 }
 .category-image-grid {
   background-size: cover;

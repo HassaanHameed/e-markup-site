@@ -47,18 +47,21 @@ const Categories = props => {
   const [showItems, setShowItems] = useState(6);
 
   const [value, setValue] = useState(null);
-  const [openSnack, setOpenSnack] = useState(false);
 
   const handleClick = id => {
     props.addToCart(id);
-    setOpenSnack(true);
+    props.setOpenSnack(true);
+  };
+  const handleWishlist = id => {
+    props.handleWishlist(id);
+    props.setOpenSnack(true);
   };
 
   const handleClose = (event, reason) => {
     if (reason === "clickaway") {
       return;
     }
-    setOpenSnack(false);
+    props.setOpenSnack(false);
   };
 
   const [categoryChipOpen, setCategoryChipOpen] = useState({
@@ -525,6 +528,7 @@ const Categories = props => {
                               name={"Add to Cart"}
                             />
                             <FavoriteBorderIcon
+                              onClick={() => handleWishlist(id)}
                               className={classes["category-heart"]}
                             />
                           </Stack>
@@ -709,9 +713,13 @@ const Categories = props => {
           </Accordion>
         </AppBar>
       </Dialog>
-      <Snackbar open={openSnack} autoHideDuration={2000} onClose={handleClose}>
+      <Snackbar
+        open={props.openSnack}
+        autoHideDuration={2000}
+        onClose={handleClose}
+      >
         <Alert onClose={handleClose} severity="success" sx={{ width: "100%" }}>
-          Added to Cart
+          Item Added
         </Alert>
       </Snackbar>
     </>

@@ -31,13 +31,20 @@ export default function TemporaryDrawer(props) {
       role="presentation"
       onClose={toggleDrawer("left", false)}
     >
-      <DrawerContent length={props.length} />
+      <DrawerContent
+        wishlistLength={props.wishlistLength}
+        length={props.length}
+      />
     </Box>
   );
 
   return (
     <>
-      <HeaderContent toggleDrawer={toggleDrawer} length={props.length} />
+      <HeaderContent
+        toggleDrawer={toggleDrawer}
+        length={props.length}
+        wishlistLength={props.wishlistLength}
+      />
       <Drawer
         sx={{
           "& .css-4t3x6l-MuiPaper-root-MuiDrawer-paper": {
