@@ -14,6 +14,8 @@ import {
   Accordion,
   Chip,
   AccordionSummary,
+  Snackbar,
+  Alert,
 } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
@@ -39,13 +41,26 @@ const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-const Categories = () => {
+const Categories = props => {
   const [layout, setLayout] = useState(false);
   const [open, setOpen] = useState(false);
   const [showItems, setShowItems] = useState(6);
-  const [searchedItems, setSearchedItems] = useState(null);
 
   const [value, setValue] = useState(null);
+  const [openSnack, setOpenSnack] = useState(false);
+
+  const handleClick = id => {
+    props.addToCart(id);
+    setOpenSnack(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpenSnack(false);
+  };
+
   const [categoryChipOpen, setCategoryChipOpen] = useState({
     action: false,
     value: "",
@@ -107,23 +122,6 @@ const Categories = () => {
   getUniqueValues("size", uniqueSizes);
   getUniqueValues("color", uniqueColors);
 
-  // searching items through filter
-
-  // if (categoryChipOpen.action) {
-  //   const filteredSearchedItems = categoryCollection.filter(
-  //     item => item.category === categoryChipOpen.value
-  //   );
-  //   setSearchedItems(filteredSearchedItems);
-  //   console.log(searchedItems);
-  // }
-  // create a function addToCart which receive id of item and add it to cart
-  let cart = [];
-  const addToCart = id => {
-    console.log(id);
-    const item = categoryCollection.find(item => item.id === id);
-    cart.push(item);
-    console.log(cart);
-  };
   return (
     <>
       <Grid container padding={{ xs: "0px 0px 400px 0px", md: "0px" }}>
@@ -521,14 +519,11 @@ const Categories = () => {
                             columnGap={1}
                             alignItems="center"
                           >
-                            {/* <RouterLink
-                              address={`/cart/${id}`}
-                              classes={classes["routerlink-addtocart"]}
-                              name={<Heading name={"Add to Cart"} />}
-                            /> */}
-                            <button onClick={() => addToCart(id)}>
-                              Add to Cart
-                            </button>
+                            <Button
+                              classes={classes["category-addtocart-btn"]}
+                              onClick={() => handleClick(id)}
+                              name={"Add to Cart"}
+                            />
                             <FavoriteBorderIcon
                               className={classes["category-heart"]}
                             />
@@ -565,6 +560,11 @@ const Categories = () => {
           </Toolbar>
         </AppBar>
       </Dialog>
+      <Snackbar open={openSnack} autoHideDuration={2000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="success" sx={{ width: "100%" }}>
+          Added to Cart
+        </Alert>
+      </Snackbar>
     </>
   );
 };

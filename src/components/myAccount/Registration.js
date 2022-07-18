@@ -12,12 +12,13 @@ const Registration = () => {
   return (
     <>
       <Stack
-        minHeight="110vh"
+        padding={{ xs: "100px 5px 50px 5px", md: "50px 5px" }}
+        width="100%"
         direction="column"
+        minHeight="100vh"
         rowGap={2}
         justifyContent="center"
         alignItems="center"
-        p={3}
       >
         <Heading1 classes={classes["general-headings"]} name={"Registration"} />
         <Input

@@ -12,7 +12,13 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 
-const Cart = () => {
+const Cart = props => {
+  // collect total amount from cart items
+  let total = 0;
+  props.cart.map(item => {
+    total += item.price;
+  });
+
   return (
     <>
       <Grid container padding="100px 5px" minHeight="90vh" rowGap={2}>
@@ -33,20 +39,35 @@ const Cart = () => {
                 </TableRow>
               </TableHead>
               <TableBody>
-                <TableRow>
-                  <TableCell>Picture</TableCell>
-                  <TableCell>Name</TableCell>
-                  <TableCell>Size</TableCell>
-                  <TableCell>Color</TableCell>
-                  <TableCell>Price</TableCell>
-                  <TableCell>Action</TableCell>
-                </TableRow>
+                {props.cart.map(({ id, name, size, color, price }) => (
+                  <Fragment key={id}>
+                    <TableRow>
+                      <TableCell>
+                        <img
+                          src={GeneralImg}
+                          width="50px"
+                          height="50px"
+                          alt={name}
+                        />
+                      </TableCell>
+                      <TableCell>{name}</TableCell>
+                      <TableCell>{size}</TableCell>
+                      <TableCell>{color}</TableCell>
+                      <TableCell>{`$${price}`}</TableCell>
+                      <TableCell>
+                        <button onClick={() => props.removeCartItem(id)}>
+                          remove
+                        </button>
+                      </TableCell>
+                    </TableRow>
+                  </Fragment>
+                ))}
               </TableBody>
             </Table>
           </TableContainer>
         </Grid>
         <Grid item xs={12}>
-          <h3>Total Amount: $24</h3>
+          <h3>Total Amount: {`$${total}`}</h3>
         </Grid>
         <Grid item xs={12}>
           <button>purchase</button>

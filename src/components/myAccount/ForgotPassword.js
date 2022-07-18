@@ -6,17 +6,19 @@ import classes from "./Account.module.css";
 import Heading1 from "../UI/Heading";
 import RouterLink from "../UI/RouterLink";
 import Input from "../UI/Input";
+import Button from "../UI/Button";
 
 const ForgotPassword = () => {
   return (
     <>
       <Stack
-        minHeight="90vh"
+        padding={{ xs: "100px 5px 50px 5px", md: "50px 5px" }}
+        width="100%"
         direction="column"
+        minHeight="100vh"
         rowGap={2}
         justifyContent="center"
         alignItems="center"
-        p={3}
       >
         <Heading1
           classes={classes["general-headings"]}
@@ -53,6 +55,8 @@ const ForgotPassword = () => {
           type={"password"}
           placeholder={"Confirm Password"}
         />
+        <Button classes={classes["action-button"]} name={"Submit"} />
+        <Heading1 name={"and"} />
         <RouterLink
           address={"/login"}
           classes={classes["action-button-forgot"]}
