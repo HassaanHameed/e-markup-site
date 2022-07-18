@@ -12,7 +12,7 @@ const Registration = () => {
   return (
     <>
       <Stack
-        padding={{ xs: "100px 5px 50px 5px", md: "50px 5px" }}
+        padding={{ xs: "100px 0px 50px 0px", md: "50px 0px" }}
         width="100%"
         direction="column"
         minHeight="100vh"

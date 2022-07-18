@@ -3,10 +3,9 @@
   border: 1px solid black;
   padding: 5px 10px;
   border-radius: 5px;
-  width: 250px;
+
   background-color: transparent;
 
-  width: 400px;
   font-size: 17px;
 }
 .action-button {
@@ -36,7 +35,7 @@
   font-size: 30px;
 }
 .quetion-selection {
-  width: 422px;
+  width: 215px;
   padding: 5px 10px;
   font-size: 17px;
   border: 1px solid black;
