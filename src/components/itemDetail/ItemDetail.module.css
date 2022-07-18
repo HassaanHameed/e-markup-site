@@ -1,0 +1,154 @@
+.category-main-heading {
+  font-size: 50px;
+  color: silver;
+}
+.category-sortby-heading {
+  font-size: 15px;
+}
+.category-layout-style:hover {
+  cursor: pointer;
+}
+
+.category-images:hover {
+  cursor: pointer;
+}
+.category-name-heading {
+  font-size: 30px;
+  font-weight: bold;
+}
+.category-addtocart-btn {
+  border: 2px solid black;
+  background-color: transparent;
+  padding: 8px 15px;
+  font-size: 15px;
+  border-radius: 5px;
+}
+.category-addtocart-btn:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+.category-heart:hover {
+  cursor: pointer;
+  color: brown;
+}
+.category-image-grid {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  min-width: 200px;
+  min-height: 250px;
+}
+.category-routerlink {
+  text-decoration: none;
+}
+.category-price {
+  font-size: 15px;
+  font-weight: bold;
+}
+.category-country {
+  color: silver;
+  font-size: 13px;
+}
+.category-descrition {
+  color: silver;
+}
+.category-offer-badge {
+  background-color: brown;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+  width: fit-content;
+  font-weight: bold;
+  font-size: 14px;
+}
+.category-cat {
+  text-transform: uppercase;
+  color: silver;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.filter-category {
+  font-size: 15px;
+  font-weight: bold;
+  padding: 5px 12px;
+  border-radius: 5px;
+  background-color: brown;
+  color: white;
+}
+.filter-category:hover {
+  cursor: pointer;
+  background-color: black;
+}
+
+.price-filter-btn {
+  background-color: brown;
+  padding: 5px 15px;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  margin: 10px 0px;
+}
+.price-filter-btn:hover {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+}
+.category-price-with-offer {
+  text-decoration: line-through;
+  color: silver;
+}
+.filter-search-btn {
+  width: fit-content;
+  height: fit-content;
+  padding: 10px 15px;
+  margin: 10px 0px;
+  background-color: brown;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-weight: bold;
+}
+.filter-search-btn:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+.routerlink-addtocart {
+  text-decoration: none;
+  font-size: 15px;
+  background-color: black;
+  color: white;
+  padding: 10px 15px;
+}
+.main-heading {
+  font-size: 40px;
+  color: silver;
+}
+.reviews-heading {
+  font-size: 20px;
+  font-weight: bold;
+}
+.textarea {
+  width: 80%;
+  height: fit-content;
+  padding: 10px 15px;
+  margin: 10px 0px;
+  border-radius: 5px;
+}
+.review-btn {
+  font-size: 17px;
+  font-weight: bold;
+  background-color: brown;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+.review-btn:hover {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+}

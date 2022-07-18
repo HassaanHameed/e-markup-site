@@ -12,6 +12,7 @@ import Categories from "./components/categories/Categories";
 import Cart from "./components/cart/Cart";
 import Profile from "./components/profile/Profile";
 import Wishlist from "./components/wishlist/Wishlist";
+import ItemDetail from "./components/itemDetail/ItemDetail";
 import { categoryCollection } from "./components/categories/categoryData";
 
 const App = () => {
@@ -94,6 +95,17 @@ const App = () => {
               addToCart={addToCart}
               removeWishlistItem={removeWishlistItem}
               wishlist={wishlist}
+            />
+          }
+        />
+        <Route
+          path="/itemdetail/:id"
+          element={
+            <ItemDetail
+              openSnack={openSnack}
+              setOpenSnack={setOpenSnack}
+              addToCart={addToCart}
+              handleWishlist={handleWishlist}
             />
           }
         />

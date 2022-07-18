@@ -436,7 +436,7 @@ const Categories = props => {
                             classes={classes["category-country"]}
                           />
                           <RouterLink
-                            address={"/w1"}
+                            address={`/itemdetail/${id}`}
                             classes={classes["category-routerlink"]}
                             name={
                               <Heading
